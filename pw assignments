@@ -1,0 +1,61 @@
+Q1. What is the Probability density function?
+The Probability Density Function (PDF) is a fundamental concept in probability and statistics. It is used to describe the probability distribution of a continuous random variable. In simpler terms, it tells us how likely different values are to occur for that random variable
+
+Q2. What are the types of Probability distribution?
+Discrete Probability Distributions: Discrete probability distributions are associated with discrete random variables, which take on a countable set of distinct values. In other words, the random variable can only assume specific, separate values
+Continuous Probability Distributions: Continuous probability distributions are associated with continuous random variables, which can take on an uncountable range of values within a given interval. These distributions are defined using probability density functions (PDFs)
+Q3. Write a Python function to calculate the probability density function of a normal distribution with given mean and standard deviation at a given point.
+Q4. What are the properties of Binomial distribution? Give two examples of events where binomial
+distribution can be applied.
+1.	Fixed Number of Trials (n): The Binomial distribution is applicable when there is a fixed number of trials, denoted as 'n'. Each trial is independent of the others, meaning the outcome of one trial does not influence the outcome of another.
+2.	Two Possible Outcomes: In each trial, there are only two possible outcomes: success (usually denoted by 'S') with probability 'p' and failure (usually denoted by 'F') with probability 'q', where 'q' is equal to (1 - p).
+3.	Constant Probability: The probability of success (p) remains constant across all trials. This is often referred to as the assumption of "constant probability of success."
+4.	Discrete and Countable: The Binomial distribution deals with a discrete random variable, which means the number of successes must be countable and cannot take on intermediate values between whole numbers.
+Two examples of events where the Binomial distribution can be applied are:
+1.	Coin Toss: Suppose you flip a fair coin (with heads as success) 10 times. The Binomial distribution can be used to calculate the probability of getting a certain number of heads (successes) out of the 10 flips.
+2.	Drug Efficacy: In a clinical trial, a new drug is tested on a group of patients, and the success is defined as the number of patients who show improvement in their condition. The Binomial distribution can be used to calculate the probability of a specific number of successful outcomes in the trial.
+
+
+Q5. Generate a random sample of size 1000 from a binomial distribution with probability of success 0.4 and plot a histogram of the results using matplotlib.
+import numpy as np
+import matplotlib.pyplot as mp
+probability=0.4
+attempts=1000
+results=np.random.binomial(n=attempts,p=probability,size=attempts)
+mp.hist(results,attempts,alpha=0.8)
+mp.show()
+
+Q6. Write a Python function to calculate the cumulative distribution function of a Poisson distribution with given mean at a given point.
+Q7. How Binomial distribution different from Poisson distribution?
+Number of Trials:
+•	Binomial Distribution: The Binomial distribution is used when there is a fixed number of independent trials, denoted as 'n'
+•	Poisson Distribution: The Poisson distribution, on the other hand, is used when we are interested in modeling the number of events that occur in a fixed interval of time or space. It is not based on a fixed number of trials but instead describes the frequency of events occurring in a continuous or discrete time frame.
+Probability of Success:
+•	Binomial Distribution: In the Binomial distribution, the probability of success (p) remains constant across all trials. Each trial is independent, and the probability of success is the same in each trial.
+•	Poisson Distribution: In the Poisson distribution, the probability of an event occurring in a fixed interval is constant, denoted by 'λ' (lambda). This parameter represents the average rate of events occurring in that interval.
+Probability of Success:
+•	Binomial Distribution: In the Binomial distribution, the probability of success (p) remains constant across all trials. Each trial is independent, and the probability of success is the same in each trial.
+•	Poisson Distribution: In the Poisson distribution, the probability of an event occurring in a fixed interval is constant, denoted by 'λ' (lambda). This parameter represents the average rate of events occurring in that interval.
+Applicability:
+•	Binomial Distribution: The Binomial distribution is often used in situations where there are a fixed number of trials with two possible outcomes, such as coin flips, success/failure experiments, or the number of defective items in a sample.
+•	Poisson Distribution: The Poisson distribution is commonly applied to model the number of rare events, such as the number of arrivals at a service center, the number of customer complaints per hour, or the number of accidents in a specific area over time.
+
+Q8. Generate a random sample of size 1000 from a Poisson distribution with mean 5 and calculate the sample mean and variance.
+time=5
+sample=1000
+random=np.random.poisson(lam=time,size=sample)
+
+expected =np.mean(random)
+variance=np.var(random)
+print(expected)
+print(variance)
+Q9. How mean and variance are related in Binomial distribution and Poisson distribution?
+Binomial Distribution: For a Binomial distribution with parameters n (number of trials) and p (probability of success in each trial), the mean  and variance are related as follows:
+mean=n⋅p 
+variance=n⋅p⋅(1−p)
+Poisson Distribution: For a Poisson distribution with parameter lambda (the average rate of events occurring in a fixed interval), the mean  and variance  are related as follows:
+mean=lambda
+variance=lambda
+
+Q10. In normal distribution with respect to mean position, where does the least frequent data appear?
+in a normal distribution, the least frequent data points appear in the tails, farthest away from the mean, whether it's a standard normal distribution or a normal distribution with non-zero mean and standard deviation. The frequency of data points gradually decreases as we move away from the mean towards the tails of the distribution.
